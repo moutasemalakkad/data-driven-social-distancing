@@ -5,7 +5,7 @@ from kafka import KafkaProducer
 
 
 
-producer = KafkaProducer(bootstrap_servers=bootstrap_server   #to be added
+producer = KafkaProducer(bootstrap_servers='localhost:9092'   
                          value_serializer=lambda x:
                          #searlize object to send to kafkas
                          dumps(x).encode('utf-8'))
