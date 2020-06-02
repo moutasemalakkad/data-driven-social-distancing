@@ -116,9 +116,10 @@ class SchemaFaker:
         return sch
 
     def stream(self):
-        return json.dumps(self.genRandomSchema(), indent=4)
+        return json.dumps(self.genRandomSchema()) # , indent=4
 
-schemaFaker = SchemaFaker()
+if __name__ == "__main__":
+    instance = SchemaFaker()
 
-while True:
-    print(schemaFaker.stream())
+    while True:
+        print(instance.stream())
