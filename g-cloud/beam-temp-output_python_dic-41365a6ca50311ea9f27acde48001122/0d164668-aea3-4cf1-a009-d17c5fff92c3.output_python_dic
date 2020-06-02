@@ -1,0 +1,80 @@
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.11,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.21,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.15,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.15,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.18,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.02,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.02,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.18,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.02,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}
+{
+  "budgetDisplayName": "Budget",
+  "costAmount": 0.11,
+  "costIntervalStart": "2020-05-01T07:00:00Z",
+  "budgetAmount": 5.0,
+  "budgetAmountType": "SPECIFIED_AMOUNT",
+  "currencyCode": "USD"
+}

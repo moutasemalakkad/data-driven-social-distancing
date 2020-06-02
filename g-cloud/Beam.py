@@ -1,17 +1,48 @@
 import apache_beam as beam
+from apache_beam.options.pipeline_options import PipelineOptions, StandardOptions
+from apache_beam import window
+
+from google.cloud import pubsub_v1
+
+
+import json
+import os
+import time
 
 
 
-# Transform our Json object to Python Dict
+#### json file (authirzation)
+path_service_account = "beam-276623-290ddf0eab0b.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path_service_account
+
+
+#### topics#####
+input_subscription = 'projects/beam-276623/subscriptions/subscribe1'
+output_topic = 'projects/beam-276623/topics/Topic2'
+
+
+
+
+#######Beam Connfigs#######
+# set options
+options = PipelineOptions()
+options.view_as(StandardOptions).streaming = True
+
+
+
+#######Transformation Functions#######
+
+# Json to Python Dic
 def to_python_dict(element):
     return json.loads(element)
 
 
-# get venue
+# get venue value
 def get_venue(elements):
   return elements['venue']
 
-# get mode
+
+# get mode value
 def get_mode(elements):
    return elements['mode']
 
@@ -22,27 +53,37 @@ def build_tuple(elements):
   return (geo_hash, mode)
 
 
+# # Transform our Json object to Python Dict
+# def to_python_dict(element):
+#     return json.loads(element)
+#
+#
+# # get venue
+# def get_venue(elements):
+#   return elements['venue']
+#
+# # get mode
+# def get_mode(elements):
+#    return elements['mode']
+#
+# # build tuple
+# def build_tuple(elements):
+#   mode = elements['mode']
+#   geo_hash = elements['geohash']
+#   return (geo_hash, mode)
+
+
+
+###### Pipline Beam (Transforms) ############
 
 
 
 # Building a Beam Pipline
-p1 = beam.Pipeline()
+p1 = beam.Pipeline(options=options)
 
 attendance_count = (
-
-   p1
-    |'read file' >> beam.io.external.ReadFromKafka(
-                    consumer_config={
-                      'bootstrap.servers': 'notvalid1:7777, notvalid2:3531'
-                  },
-                  topics=['topic1', 'topic2'],
-                  key_deserializer='org.apache.kafka.'
-                  'common.serialization.'
-                  'ByteArrayDeserializer',
-                  value_deserializer='org.apache.kafka.'
-                  'common.serialization.'
-                  'LongDeserializer'
-))   #ReadAllFromText.    # beam.io.external.kafka
+    p1
+    |'read pub_sub' >> beam.io.ReadFromPubSub(subscription=input_subscription)
 
 
 
@@ -58,13 +99,14 @@ attendance_count = (
 
 
 
-    |'write out' >> beam.io.WriteToText('output_python_dic')
+    | 'Write to PubSUb' >> beam.io.WriteToPubSub(output_topic)
 
 )
 
 
 # running pipline
-p1.run()
+result = p1.run()
+result.wait_until_finish()
 
 
 
