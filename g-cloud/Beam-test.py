@@ -34,7 +34,9 @@ options.view_as(StandardOptions).streaming = True
 
 # Json to Python Dic
 def to_python_dict(element):
-    return json.loads(element)
+    element = json.loads(element) # had to change this to encode
+    #print(type(element))
+    return element      #str(event_data).encode("utf-8")
 
 
 # get venue value
@@ -50,7 +52,7 @@ def get_mode(elements):
 def build_tuple(elements):
   mode = elements['mode']
   geo_hash = elements['geohash']
-  return (geo_hash, mode)
+  return (geo_hash, mode) #
 
 
 # # Transform our Json object to Python Dict
@@ -83,19 +85,27 @@ p1 = beam.Pipeline(options=options)
 
 attendance_count = (
     p1
-    |'read pub_sub' >> beam.io.ReadFromPubSub(subscription=input_subscription)
+    |'read pub_sub' >> beam.io.ReadFromPubSub(subscription=input_subscription) #, timestamp_attribute
+
+
+    # timestamp_attribute –
+    # Message value to use as element timestamp. If None, uses message publishing time as the timestamp.
+
+
+    | 'to python dict' >> beam.Map(to_python_dict)
 
 
 
+    | 'Filter offline events' >> beam.Filter(lambda element: element['venue']['mode'] == 'offline') # change to offline
 
 
-    # | 'to python dict' >> beam.Map(to_python_dict)
-
-    # | 'Filter offline events' >> beam.Filter(lambda element: element['venue']['mode'] == 'online') # change to offline
+    | 'get venue' >> beam.Map(get_venue)
 
 
-    # | 'get venue' >> beam.Map(get_venue)
-    # | 'build_tuple' >> beam.Map(build_tuple)
+    | 'build_tuple' >> beam.Map(build_tuple)
+
+
+    | 'ecode' >> beam.Map(lambda x : str(x).encode("utf-8"))
 
 
 
