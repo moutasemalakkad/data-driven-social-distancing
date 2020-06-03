@@ -17,8 +17,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path_service_account
 
 
 #### topics#####
-input_subscription = 'projects/beam-276623/subscriptions/subscribe1'
-output_topic = 'projects/beam-276623/topics/Topic2'
+input_subscription = 'projects/covid-19-279120/subscriptions/beam-raw-data-sub'
+output_topic = 'projects/covid-19-279120/topics/cleaned_data'
 
 
 
@@ -107,26 +107,3 @@ attendance_count = (
 # running pipline
 result = p1.run()
 result.wait_until_finish()
-
-
-
-
-
-
-
-
-
-
-
-# pipeline
-#    .apply(KafkaIO.read()
-#          .withBootstrapServers("broker_1:9092,broker_2:9092")
-#          .withTopics(ImmutableList.of("topic_1", "topic_2"))
-#
-#          .withKeyCoder(BigEndianLongCoder.of())
-#          .withValueCoder(StringUtf8Coder.of())
-#          .updateConsumerProperties(
-#                ImmutableMap.of("receive.buffer.bytes", 1024 * 1024))
-#
-#        .withTimestampFn(new CustomTypestampFunction())
-#        .withWatermarkFn...
