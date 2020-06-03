@@ -12,7 +12,7 @@ import time
 
 
 #### json file (authirzation)
-path_service_account = "beam-276623-290ddf0eab0b.json"
+path_service_account = "covid-19-279120-1afca8da4df0.json"
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path_service_account
 
 
