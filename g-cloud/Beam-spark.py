@@ -28,10 +28,9 @@ output_topic = 'projects/covid-19-279120/topics/cleaned_data'
 #######Beam Connfigs#######
 # set options
 options = PipelineOptions([
-    "--runner=FlinkRunner",
-    "--flink_version=1.10",
-    "--flink_master=34.86.68.223:8081",
-    "--environment_type=EXTERNAL"     #LOOPBACK
+    "--runner=PortableRunner",
+    "--job_endpoint=localhost:8099",
+    "--environment_type=LOOPBACK"
 ])
 options.view_as(StandardOptions).streaming = True
 
