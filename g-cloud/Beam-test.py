@@ -9,6 +9,8 @@ import json
 import os
 import time
 
+import sys
+
 
 
 #### json file (authirzation)
@@ -25,7 +27,12 @@ output_topic = 'projects/covid-19-279120/topics/cleaned_data'
 
 #######Beam Connfigs#######
 # set options
-options = PipelineOptions()
+options = PipelineOptions([
+    "--runner=FlinkRunner",
+    "--flink_version=1.10",
+    "--flink_master=34.86.68.223:8081",
+    "--environment_type=EXTERNAL"     #LOOPBACK
+])
 options.view_as(StandardOptions).streaming = True
 
 
@@ -108,12 +115,11 @@ attendance_count = (
     | 'ecode' >> beam.Map(lambda x : str(x).encode("utf-8"))
 
 
-
     | 'Write to PubSUb' >> beam.io.WriteToPubSub(output_topic)
 
 )
 
 
 # running pipline
-result = p1.run()
+result = p1.run() #
 result.wait_until_finish()
