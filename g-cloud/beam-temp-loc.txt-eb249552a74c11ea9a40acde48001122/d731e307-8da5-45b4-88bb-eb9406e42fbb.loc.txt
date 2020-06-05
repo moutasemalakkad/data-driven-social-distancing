@@ -1,0 +1,1 @@
+('hgp0b', 'offline')

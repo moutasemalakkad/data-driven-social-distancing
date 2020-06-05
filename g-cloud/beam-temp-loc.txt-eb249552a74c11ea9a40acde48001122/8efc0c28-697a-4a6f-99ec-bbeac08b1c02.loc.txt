@@ -1,0 +1,2 @@
+('hfvdb', 'offline')
+('hfvr8', 'offline')

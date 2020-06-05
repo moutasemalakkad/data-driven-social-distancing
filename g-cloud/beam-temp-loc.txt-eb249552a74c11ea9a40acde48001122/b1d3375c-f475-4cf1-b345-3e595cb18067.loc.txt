@@ -1,0 +1,3 @@
+('hbtwn', 'offline')
+('hb12j', 'offline')
+('hb08p', 'offline')
