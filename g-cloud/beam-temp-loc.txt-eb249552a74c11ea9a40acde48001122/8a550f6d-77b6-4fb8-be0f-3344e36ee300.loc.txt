@@ -1,0 +1,2 @@
+('hbu21', 'offline')
+('hf7dn', 'offline')

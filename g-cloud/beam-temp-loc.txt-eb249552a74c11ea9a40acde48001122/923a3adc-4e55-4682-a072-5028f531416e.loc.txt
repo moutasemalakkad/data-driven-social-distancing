@@ -1,0 +1,2 @@
+('hgmg9', 'offline')
+('hbmv0', 'offline')

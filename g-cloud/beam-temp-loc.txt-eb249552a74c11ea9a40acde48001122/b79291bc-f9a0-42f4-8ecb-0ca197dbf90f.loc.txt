@@ -1,0 +1,1 @@
+('hbgz1', 'offline')

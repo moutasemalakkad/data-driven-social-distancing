@@ -1,0 +1,2 @@
+('hc81v', 'offline')
+('hfugh', 'offline')

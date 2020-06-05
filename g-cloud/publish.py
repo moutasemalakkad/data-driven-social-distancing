@@ -30,9 +30,9 @@ publisher = pubsub_v1.PublisherClient()
 
 while 1:
     event_data = SchemaFaker().stream()
-    print(f'Publishing {event_data} to {pub_sub_topic_name}')
+    #print(f'Publishing {event_data} to {pub_sub_topic_name}')
     publisher.publish(pub_sub_topic_name, str(event_data).encode("utf-8"))   # must be a byte string
-    time.sleep(10)
+
 
 
 

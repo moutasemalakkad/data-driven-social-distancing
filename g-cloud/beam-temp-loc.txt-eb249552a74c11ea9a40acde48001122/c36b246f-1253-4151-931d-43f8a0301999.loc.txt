@@ -1,0 +1,1 @@
+('hbmu0', 'offline')
