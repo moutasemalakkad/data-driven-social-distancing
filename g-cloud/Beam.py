@@ -108,7 +108,6 @@ attendance_count = (
     | 'ecode' >> beam.Map(lambda x : str(x).encode("utf-8"))
 
 
-
     | 'Write to PubSUb' >> beam.io.WriteToPubSub(output_topic)
 
 )
