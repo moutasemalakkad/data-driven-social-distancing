@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
 
     # subscription path
-    subscription_name = "projects/covid-19-279120/subscriptions/beam-raw-data-sub"
+    subscription_name = "projects/covid-19-279120/subscriptions/beam_cleaned"
 
 
     # subscriber instance

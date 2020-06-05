@@ -52,9 +52,9 @@ class SchemaFaker:
         venue = {}
         venue["mode"] = self.takeWord(["online", "offline"])
         venue["venue_name"] = place[2]
-        #venue["geohash"] = gh.encode(lat, long, precision=5)
         venue["lon"] = float(place[0])
         venue["lat"] = float(place[1])
+        venue["geohash"] = gh.encode(venue["lat"], venue["lon"], precision=5)
         venue["venue_id"] = self.randKdig(7, 9)
 
         sch["venue"] = venue
