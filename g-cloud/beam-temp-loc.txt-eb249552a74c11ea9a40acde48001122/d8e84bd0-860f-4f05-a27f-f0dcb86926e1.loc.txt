@@ -1,3 +1,0 @@
-('j0025', 'offline')
-('h8p01', 'offline')
-('h9m5d', 'offline')

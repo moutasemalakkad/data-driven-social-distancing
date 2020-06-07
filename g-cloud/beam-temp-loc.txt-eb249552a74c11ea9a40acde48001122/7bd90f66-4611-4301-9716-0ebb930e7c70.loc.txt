@@ -1,2 +1,0 @@
-('hfvdb', 'offline')
-('hf7dn', 'offline')

@@ -25,7 +25,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path_service_account
 
 #### topics#####
 input_subscription = 'projects/totemic-polygon-279515/subscriptions/meet'
-output_topic = 'projects/covid-19-279120/topics/cleaned_data'
+
 
 
 
@@ -100,7 +100,7 @@ def build_tuple(elements):
 ###### Pipline Beam (Transforms) ############
 
 
-
+print(0000000000000000)
 # Building a Beam Pipline
 p1 = beam.Pipeline(options=pipeline_options)
 
@@ -135,7 +135,7 @@ attendance_count = (
 #beam.io.WriteToText('ou.txt')
 )
 
-
+print(111111111111111)
 # running pipline
 result = p1.run() #
 result.wait_until_finish()

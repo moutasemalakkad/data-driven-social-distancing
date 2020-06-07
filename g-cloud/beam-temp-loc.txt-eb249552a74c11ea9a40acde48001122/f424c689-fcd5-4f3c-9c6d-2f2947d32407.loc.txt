@@ -1,2 +1,0 @@
-('hb00p', 'offline')
-('hgj83', 'offline')
