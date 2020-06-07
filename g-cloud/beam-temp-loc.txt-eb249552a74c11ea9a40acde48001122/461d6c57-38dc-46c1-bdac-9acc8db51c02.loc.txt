@@ -1,2 +1,0 @@
-('hcbzm', 'offline')
-('hb504', 'offline')

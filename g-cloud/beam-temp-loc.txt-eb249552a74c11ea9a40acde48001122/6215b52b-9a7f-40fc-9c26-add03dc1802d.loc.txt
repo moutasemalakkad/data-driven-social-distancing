@@ -1,2 +1,0 @@
-('hgp0b', 'offline')
-('hb52n', 'offline')
