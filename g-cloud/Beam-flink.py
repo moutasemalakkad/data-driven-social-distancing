@@ -32,12 +32,13 @@ output_topic = 'projects/covid-19-279120/topics/cleaned_data'
 
 import argparse
 
+# we added some required args by beam
 parser = argparse.ArgumentParser()
-parser.add_argument('--project')
-parser.add_argument('--runner')
-parser.add_argument('--temp_location')
+parser.add_argument('--project') # GCP project name
+parser.add_argument('--runner')  # Dataflow ---> flink
+parser.add_argument('--temp_location') # files created during the job (temp files)
 parser.add_argument('--output')
-parser.add_argument('--job_name')
+parser.add_argument('--job_name') # job name
 parser.add_argument('--region')
 parser.add_argument('--streaming')
 
