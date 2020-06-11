@@ -87,8 +87,7 @@ def get_address(elements):
     location = locator.reverse(coordinates)
     dict = location.raw
     address = dict['display_name']
-    elements['address'] = address
-    return elements
+    return {"geohash":elements['geo_hash'], "lat":elements['lat'], "lon":elements['lon'], "mode":elements['mode'], "address": address}
     #change pipeline
 
 
@@ -119,8 +118,6 @@ attendance_count = (
 
 
     | 'get venue' >> beam.Map(get_venue)
-
-    | 'Build initital dic' >> beam.Map(build_tuple)
 
 
     | 'build_tuple' >> beam.Map(get_address)
