@@ -2,6 +2,9 @@ import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions, StandardOptions, SetupOptions
 from apache_beam import window
 
+
+from geopy.geocoders import Nominatim
+
 from google.cloud import pubsub_v1
 
 
@@ -70,6 +73,7 @@ def get_mode(elements):
 
 # build tuple
 def build_tuple(elements):
+  locator = Nominatim(user_agent='google')
   mode = elements['mode']
   geo_hash = elements['geohash']
   lon = elements['lon']
@@ -77,24 +81,17 @@ def build_tuple(elements):
   return {"geohash":geo_hash, "lat":lat, "lon":lon, "mode":mode} #
 
 
-# # Transform our Json object to Python Dict
-# def to_python_dict(element):
-#     return json.loads(element)
-#
-#
-# # get venue
-# def get_venue(elements):
-#   return elements['venue']
-#
-# # get mode
-# def get_mode(elements):
-#    return elements['mode']
-#
-# # build tuple
-# def build_tuple(elements):
-#   mode = elements['mode']
-#   geo_hash = elements['geohash']
-#   return (geo_hash, mode)
+def get_address(elements):
+    locator = Nominatim(user_agent='google')
+    coordinates = elements['lat'], elements['lon']
+    location = locator.reverse(coordinates)
+    dict = location.raw
+    address = dict['display_name']
+    elements['address'] = address
+    return elements
+    #change pipeline
+
+
 
 
 
@@ -123,16 +120,18 @@ attendance_count = (
 
     | 'get venue' >> beam.Map(get_venue)
 
+    | 'Build initital dic' >> beam.Map(build_tuple)
 
-    | 'build_tuple' >> beam.Map(build_tuple)
+
+    | 'build_tuple' >> beam.Map(get_address)
 
 
-#    | 'ecode' >> beam.Map(lambda x : str(x).encode("utf-8"))
+#    | 'encode' >> beam.Map(lambda x : str(x).encode("utf-8"))
 
 
     | 'Write to PubSUb' >> beam.io.WriteToBigQuery(
-                        "totemic-polygon-279515:dataset.meetup",
-                        schema="geohash:string, mode:string, lat:Float, lon:float")
+                        "totemic-polygon-279515:dataset.meetup_address",
+                        schema="geohash:string, mode:string, lat:Float, lon:Float, address:string")
 #beam.io.WriteToText('ou.txt')
 )
 
