@@ -76,24 +76,7 @@ def build_tuple(elements):
   return {"geohash":geo_hash, "lat":lat, "lon":lon, "mode":mode} #
 
 
-# # Transform our Json object to Python Dict
-# def to_python_dict(element):
-#     return json.loads(element)
-#
-#
-# # get venue
-# def get_venue(elements):
-#   return elements['venue']
-#
-# # get mode
-# def get_mode(elements):
-#    return elements['mode']
-#
-# # build tuple
-# def build_tuple(elements):
-#   mode = elements['mode']
-#   geo_hash = elements['geohash']
-#   return (geo_hash, mode)
+
 
 
 
@@ -129,7 +112,7 @@ attendance_count = (
 #    | 'ecode' >> beam.Map(lambda x : str(x).encode("utf-8"))
 
 
-    | 'Write to PubSUb' >> beam.io.WriteToBigQuery(
+    | 'Write to BigQuery' >> beam.io.WriteToBigQuery(
                         "totemic-polygon-279515:dataset.meetup",
                         schema="geohash:string, mode:string, lat:Float, lon:float")
 #beam.io.WriteToText('ou.txt')
