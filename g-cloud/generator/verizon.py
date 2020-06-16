@@ -55,7 +55,7 @@ class SchemaFaker:
 
         sch["timestamp"] = datetime.now().strftime("%H:%M")
 
-        place = self.randPlace(city="New_York") #self.ff.local_latlng(country_code='US')
+        place = self.ff.local_latlng(country_code='US') #self.ff.local_latlng(country_code='US')
         venue = {}
         venue["mode"] = self.takeWord(["online", "offline"])
         venue["venue_name"] = place[2]
