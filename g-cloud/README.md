@@ -1,4 +1,4 @@
-![stop coivd](g-cloud/images/Stop.png)
+![stop coivd](images/Stop.png)
 
 
 ## Background
