@@ -10,4 +10,4 @@ I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives
 
 ## Tech Stack
 
-![tech](images/pipe.png)
+![tech](images/pipe1.png)
