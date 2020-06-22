@@ -11,3 +11,16 @@ I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives
 ## Tech Stack
 
 ![tech](images/pipe1.png)
+
+
+## Running Instruction
+
+- Clone the repo
+- Change GCP's account info
+	- Project ID
+	- PubSub subscriptions
+	- GCP's JSON key for authorization
+- CD to g-cloud
+- Publish Messages using
+	python run_publish.py --total_message_to_send 10000
+- Consume
