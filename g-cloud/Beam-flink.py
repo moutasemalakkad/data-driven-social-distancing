@@ -1,24 +1,27 @@
+# Import Libraries
+
+## Beam Modules
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions, StandardOptions, SetupOptions
 from apache_beam import window
 
-
+# Long/Lat decoder
 from geopy.geocoders import Nominatim
 
+#GCP
 from google.cloud import pubsub_v1
 
-
+# OS / Format
 import json
 import os
 import time
-
 import sys
 
-
+# Must change to your project ID
 project_id = "totemic-polygon-279515"
 
 
-# Json Key
+# Must Change to your GCP's key
 path_service_account = 'totemic-polygon-279515-42a8a5c17575.json'
 
 
@@ -32,7 +35,7 @@ output_topic = 'projects/covid-19-279120/topics/cleaned_data'
 
 
 
-
+# Import argparse
 import argparse
 
 # we added some required args by beam
@@ -47,6 +50,7 @@ parser.add_argument('--streaming')
 
 known_args, pipeline_args = parser.parse_known_args()
 
+# Pipeline Options (Streaming must be true)
 pipeline_options = PipelineOptions(pipeline_args)
 pipeline_options.view_as(SetupOptions).save_main_session = True
 pipeline_options.view_as(StandardOptions).streaming = True
@@ -80,7 +84,7 @@ def build_tuple(elements):
   lat = elements['lat']
   return {"geohash":geo_hash, "lat":lat, "lon":lon, "mode":mode} #
 
-
+# get physical address
 def get_address(elements):
     locator = Nominatim(user_agent='google')
     coordinates = elements['lat'], elements['lon']
