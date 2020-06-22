@@ -37,7 +37,7 @@ I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives
     --region <YOUR REGION EX:us-central1>
 
 
-## App Demo
+## App Demo (Please click the image below)
 [![Watch the video](images/youtube.png)](https://www.youtube.com/watch?v=_C6mzchTkE8&feature=emb_title)
 
 
