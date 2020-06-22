@@ -11,3 +11,27 @@ I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives
 ## Tech Stack
 
 ![tech](images/pipe1.png)
+
+
+## Running Instruction
+
+- Clone the repo
+- Change GCP's account info
+	- Project ID
+	- PubSub subscriptions
+	- GCP's JSON key for authorization
+- CD to g-cloud
+- Publish Messages using:
+	python run_publish.py --total_message_to_send 10000
+- Consume:
+	python -m \
+    Beam-flink \
+    --project \
+    <PROJECT ID> \
+    --runner rundataflow \
+    --temp_location \
+    gs://<GCP BUCKET>/temp \
+    --output \
+    gs://<GCP BUCKET>/results/output \
+    --job_name dataflow-meet \
+    --region <YOUR REGION EX:us-central1>
