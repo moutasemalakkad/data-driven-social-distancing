@@ -38,6 +38,9 @@ I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives
 
 
 ## App Demo
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=_C6mzchTkE8&feature=emb_title)
+[![Watch the video](//imgur.com/a/8CQY2MT)](https://www.youtube.com/watch?v=_C6mzchTkE8&feature=emb_title)
+
+
+
 
 
