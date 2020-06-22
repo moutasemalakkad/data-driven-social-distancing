@@ -35,3 +35,12 @@ I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives
     gs://<GCP BUCKET>/results/output '\'
     --job_name dataflow-meet '\'
     --region <YOUR REGION EX:us-central1>
+
+
+## App Demo
+[![Watch the video](https://imgur.com/a/8CQY2MT)](https://www.youtube.com/watch?v=_C6mzchTkE8&feature=emb_title)
+
+
+
+
+
