@@ -2,7 +2,8 @@
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/) [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+
 
 
 
@@ -13,7 +14,7 @@ With sensors devices being affordable and accurate, It is almost inevitable for 
 I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives away from their loved ones. Consequently, I wanted to build an application that promotes social distancing and improves public health during the COVID-19 pandemic using cell-phone signals. 
 
 
-# Set up your environment (HIGHLY RECOMMENDED - AND ALMOST REQUIRED)
+# Set up your environment
 - The Beam SDK requires Python 2 users to use Python 2.7 and Python 3 users to use Python 3.5 or higher. Check your version by running:
 ```bash
 python --version
@@ -25,7 +26,7 @@ If you do not have pip version 7.0.0 or newer, run the following command to inst
 pip install --upgrade pip
 ```
 
-- Install Python virtual environment 
+- Install Python virtual environment (HIGHLY RECOMMENDED)
 ```bash
 pip install --upgrade virtualenv
 ```
@@ -45,8 +46,7 @@ pip install google-cloud-pubsub
 ```
 
 
-# Tech Stack
-![sack](images/pipe1.png)
+
 
 
 # Running Instructions
@@ -67,8 +67,7 @@ python run_publish.py <--total_message_to_send (int)> (optional)
 ``` 
 
 - ## Consume:
-- Beam is engine agnostic and can run many different engines (Spark, Flink, DataFlow ....). In this run, we will be using GCP's managed serviced DataFlow as the runner. However, we can change the runner to Flink or Spark by changing the 
---runner argument to any runners that I have configured in the "Runners Folder"
+- Beam is engine agnostic and can run many different engines (Spark, Flink, DataFlow ....). In this run, we will be using GCP's managed serviced DataFlow as the runner. However, we can change the runner to Flink or Spark by changing the --runner argument to any runners that I have configured in the "Runners Folder"
 ```python 
 python -m \
     Beam-flink \
@@ -79,7 +78,7 @@ python -m \
     <GC BUCKET>/temp \
     --output \
     <GC BUCKET>/results/output \
-    --job_name <name> \
+    --job_name <namme> \
     -- <Region> ex: region us-central1
 ``` 
 
@@ -95,7 +94,7 @@ python -m \
 
 
 
-# Note
+
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```bash
