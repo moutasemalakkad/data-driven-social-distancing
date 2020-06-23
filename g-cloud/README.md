@@ -67,18 +67,19 @@ python run_publish.py <--total_message_to_send (int)> (optional)
 ``` 
 
 - ## Consume:
-- Beam is engine agnostic and can run many different engines (Spark, Flink, DataFlow ....). In this run, we will be using GCP's managed serviced DataFlow as the runner. However, we can change the runner to Flink or Spark by changing the --runner argument to any runners that I have configured in the "Runners Folder"
+- Beam is engine agnostic and can run many different engines (Spark, Flink, DataFlow ....). In this run, we will be using GCP's managed serviced DataFlow as the runner. However, we can change the runner to Flink or Spark by changing the 
+--runner argument to any runners that I have configured in the "Runners Folder"
 ```python 
 python -m \
     Beam-flink \
     --project \
     <Project Name> \
-    --runner DataflowRunner \  <Can choose other runners>
+    --runner DataflowRunner \
     --temp_location \
     <GC BUCKET>/temp \
     --output \
     <GC BUCKET>/results/output \
-    --job_name <namme> \
+    --job_name <name> \
     -- <Region> ex: region us-central1
 ``` 
 
