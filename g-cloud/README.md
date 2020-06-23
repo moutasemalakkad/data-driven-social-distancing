@@ -11,7 +11,7 @@
 
 With sensors devices being affordable and accurate, It is almost inevitable for any business to leverage fresh data, which aids in the automation of many sectors and gives us the capability to respond to live events. In 2019 there were 26.66 billion active IoT devices in the world. That number is expected to reach 75 billion by 2025.
 
-I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives away from their loved ones. Consequently, I wanted to build an application that promotes social distancing and improves public health during the COVID-19 pandemic using cell-phone signals. 
+I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives away from their loved ones. Consequently, I wanted to build an application that promotes social distancing and improves public health during the COVID-19 pandemic by using simulated cell-phone signals . 
 
 # Tech Stack
 ![pipe](images/pipe1.png)
@@ -76,7 +76,7 @@ python run_publish.py <--total_message_to_send (int)> (optional)
 ``` 
 
 - ## Consume:
-- Beam is engine agnostic and can run many different engines (Spark, Flink, DataFlow ....). In this run, we will be using GCP's managed serviced DataFlow as the runner. However, we can change the runner to Flink or Spark by changing the --runner argument to any runners that I have configured in the "Runners Folder"
+- Beam is engine agnostic and can run many different engines (Spark, Flink, DataFlow ....). In this run, we will be using GCP's managed serviced DataFlow as the runner. However, we can change the runner to Flink or Spark by changing the "--runner" argument to any runner that I have configured in the "Runners Folder"
 ```python 
 python -m \
     Beam-flink \
