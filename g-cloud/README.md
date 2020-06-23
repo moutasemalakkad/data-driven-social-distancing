@@ -13,6 +13,8 @@ With sensors devices being affordable and accurate, It is almost inevitable for 
 
 I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives away from their loved ones. Consequently, I wanted to build an application that promotes social distancing and improves public health during the COVID-19 pandemic using cell-phone signals. 
 
+# Tech Stack
+![pipe](images/pip1.png)
 
 # Set up your environment
 - The Beam SDK requires Python 2 users to use Python 2.7 and Python 3 users to use Python 3.5 or higher. Check your version by running:
