@@ -16,6 +16,9 @@ I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives
 # Tech Stack
 ![pipe](images/pipe1.png)
 
+# Data
+We are mimicking cellphone signals using Python with the help of Faker library.
+
 # Set up your environment
 - The Beam SDK requires Python 2 users to use Python 2.7 and Python 3 users to use Python 3.5 or higher. Check your version by running:
 ```bash
@@ -46,6 +49,10 @@ pip install geopy
 ```bash
 pip install google-cloud-pubsub
 ```
+```bash
+pip install Faker
+```
+
 
 
 
