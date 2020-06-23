@@ -73,7 +73,7 @@ python -m \
     Beam-flink \
     --project \
     <Project Name> \
-    --runner DataflowRunner \
+    --runner DataflowRunner \  <Can choose other runners>
     --temp_location \
     <GC BUCKET>/temp \
     --output \
