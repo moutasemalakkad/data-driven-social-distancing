@@ -38,13 +38,6 @@ pip install geopy
 ```bash
 pip install google-cloud-pubsub
 ```
-```bash
-pip install apache-beam
-```
-```bash
-pip install apache-beam
-```
-
 
 
 
@@ -57,17 +50,18 @@ pip install apache-beam
     - PubSub subscriptions
     - GCP's JSON key for authorization
 
-- CD to g-cloud
+- ## CD to g-cloud
 ```bash 
 cd g-cloud
 ``` 
 
-- Publish Messages using:
+- ## Publish Messages using:
 ```python 
 python run_publish.py <--total_message_to_send (int)> (optional)
 ``` 
 
-- Consume:
+- ## Consume:
+- Beam is engine agnostic and can run many different engines (Spark, Flink, DataFlow ....). In this run, we will be using GCP's managed serviced DataFlow as the runner. However, we can change the runner to Flink or Spark by changing the --runner argument to any runners that I have configured in the "Runners Folder"
 ```python 
 python -m \
     Beam-flink \
@@ -81,6 +75,8 @@ python -m \
     --job_name <namme> \
     -- <Region> ex: region us-central1
 ``` 
+
+![unified](images/agnostic.png)
 
 
 # App Demo (Please click the video below)
