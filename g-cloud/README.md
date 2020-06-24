@@ -14,7 +14,7 @@ With sensors devices being affordable and accurate, It is almost inevitable for 
 I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives away from their loved ones. Consequently, I wanted to build an application that promotes social distancing and improves public health during the COVID-19 pandemic by using simulated cell-phone signals . 
 
 # Tech Stack
-![pipe](images/pipe1.png)
+![pipe](images/pipe2.png)
 
 # Data
 We are mimicking cellphone signals using Python with the help of Faker library.
