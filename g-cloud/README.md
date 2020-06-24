@@ -16,6 +16,7 @@ I wanted to leverage IoT to fight the pandemic that had taken 435 thousand lives
 # Tech Stack
 ![pipe](images/pipe2.png)
 
+
 # Data
 We are mimicking cellphone signals using Python with the help of Faker library.
 
