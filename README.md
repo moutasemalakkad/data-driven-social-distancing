@@ -92,11 +92,11 @@ python -m \
     -- <Region> ex: region us-central1
 ``` 
 
-![unified](g-cloudimages/agnostic.png)
+![unified](g-cloud/images/agnostic.png)
 
 
 # App Demo (Please click the video below)
-[![Watch the video](g-cloudimages/youtube.png)](https://www.youtube.com/watch?v=_C6mzchTkE8&feature=emb_title)
+[![Watch the video](g-cloud/images/youtube.png)](https://www.youtube.com/watch?v=_C6mzchTkE8&feature=emb_title)
 
 
 # License
